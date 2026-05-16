@@ -1,10 +1,22 @@
+```html id="m9v2xa"
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IRISH MAY ANDO OBSIOMA</title>
+
+  <!-- Elegant Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- Social Media Icons -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <title>Elegant Portfolio</title>
 
   <style>
 
@@ -15,155 +27,175 @@
     }
 
     body{
-      font-family: Georgia, serif;
-      background:#3b2314;
-      color:#f5efe3;
+      overflow:hidden;
+      font-family:'Montserrat', sans-serif;
     }
 
     /* HOME PAGE */
 
     .home-page{
-      min-height:100vh;
+      height:100vh;
+
+      background:
+      linear-gradient(rgba(247,241,234,0.78),
+      rgba(247,241,234,0.78)),
+      url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=1600&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
       padding:40px;
-      display:flex;
-      justify-content:justify;
-      align-items:justify;
     }
 
-    .container{
-      max-width:1200px;
-      width:100%;
+    .content{
+      max-width:700px;
     }
 
-    .title{
-      font-size:90px;
-      font-weight:900;
-      letter-spacing:5px;
-      margin-bottom:20px;
-    }
-
-    .card{
-      background:#e9dfcf;
-      border-radius:30px;
-      padding:25px;
-      display:flex;
-      gap:25px;
-      align-items:justify;
-      color:#2e1a10;
-    }
-
-    .left{
-      width:40%;
-    }
-
-    .profile{
-      background:#efe6d8;
-      border:2px solid #6d5648;
-      border-radius:20px;
-      padding:20px;
-      margin-bottom:20px;
-    }
-
-    .profile h2{
-      font-size:35px;
-      margin-bottom:15px;
-    }
-
-    .profile p{
+    .small-title{
+      color:#7a554b;
       font-size:20px;
-      margin:10px 0;
+      letter-spacing:3px;
+      margin-bottom:35px;
+      font-weight:600;
     }
 
-    .button{
-      background:#3b2314;
-      color:white;
-      padding:18px;
-      text-align:justify;
-      border-radius:15px;
-      font-size:22px;
+    .main-title{
+      font-family:'Cormorant Garamond', serif;
+      font-size:120px;
+      line-height:0.9;
+      color:#7a554b;
+      font-weight:500;
+      margin-bottom:35px;
+    }
+
+    .description{
+      color:#7a554b;
+      font-size:26px;
+      line-height:1.7;
+      margin-bottom:40px;
+      font-weight:300;
+    }
+
+    .btn{
+      display:inline-block;
+      background:white;
+      color:#7a554b;
+      padding:18px 55px;
+      border-radius:40px;
+      border:none;
       cursor:pointer;
+      font-size:18px;
+      letter-spacing:2px;
       transition:0.3s;
+      margin-bottom:50px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
     }
 
-    .button:hover{
-      background:#5a3823;
+    .btn:hover{
+      background:#7a554b;
+      color:white;
+      transform:translateY(-3px);
     }
 
-    .right{
-      width:60%;
+    /* SOCIAL ICONS */
+
+    .socials{
+      display:flex;
+      justify-content:center;
+      gap:30px;
     }
 
-    .right img{
-      width:100%;
-      height:500px;
-      object-fit:cover;
-      border-radius:25px;
+    .socials a{
+      text-decoration:none;
+      color:#7a554b;
+      font-size:38px;
+      transition:0.3s ease;
     }
 
-    .footer{
-      margin-top:25px;
-      background:#efe6d8;
-      color:#2e1a10;
-      width:350px;
-      padding:18px;
-      border-radius:20px;
-      font-size:28px;
-      font-weight:bold;
+    .socials a:hover{
+      transform:scale(1.2);
+      color:#5e3f37;
     }
 
     /* ABOUT PAGE */
 
     .about-page{
       display:none;
-      min-height:100vh;
-      background:#d8cfbe;
-      color:#3a342d;
-      padding:40px;
-      justify-content:justify;
+      height:100vh;
+
+      background:
+      linear-gradient(rgba(216,207,190,0.80),
+      rgba(216,207,190,0.80)),
+      url('https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+
+      justify-content:center;
       align-items:center;
+      text-align:center;
+      padding:40px;
     }
 
-    .about-container{
-      display:flex;
-      gap:80px;
-      align-items:justify;
-      max-width:1100px;
-      width:100%;
+    .about-content{
+      max-width:700px;
     }
 
-    .image-section img{
-      width:350px;
-      height:520px;
-      object-fit:cover;
+    .about-title{
+      font-family:'Cormorant Garamond', serif;
+      font-size:100px;
+      color:#5f463d;
+      margin-bottom:30px;
     }
 
-    .text-section{
-      max-width:450px;
-      font-family: Georgia, serif;
-    }
-
-    .text-section h1{
-      font-size:60px;
-      margin-bottom:35px;
-      font-weight:normal;
-    }
-
-    .text-section p{
+    .about-text{
       font-size:24px;
-      line-height:1.8;
-      margin-bottom:25px;
+      color:#5f463d;
+      line-height:1.9;
+      margin-bottom:40px;
+      font-weight:300;
     }
 
     .back-btn{
-      display:inline-block;
-      margin-top:20px;
-      font-size:20px;
+      background:white;
+      color:#7a554b;
+      padding:18px 55px;
+      border:none;
+      border-radius:40px;
       cursor:pointer;
+      font-size:18px;
+      letter-spacing:2px;
       transition:0.3s;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
     }
 
     .back-btn:hover{
-      background:#5a5248;
+      background:#7a554b;
+      color:white;
+      transform:translateY(-3px);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .main-title{
+        font-size:70px;
+      }
+
+      .about-title{
+        font-size:65px;
+      }
+
+      .description,
+      .about-text{
+        font-size:18px;
+      }
+
     }
 
   </style>
@@ -175,41 +207,42 @@
 
   <div class="home-page" id="homePage">
 
-    <div class="container">
+    <div class="content">
 
-      <div class="title">
-        IRISH MAY ANDO OBSIOMA
+      <div class="small-title">
+        IRIS MAY PORTFOLIO
       </div>
 
-      <div class="card">
-
-        <div class="left">
-
-          <div class="profile">
-            <h2>IDANG</h2>
-
-            <p><b>Age:</b> 21</p>
-            <p><b>Course:</b> Bachelor of Science in Information Technology</p>
-            <p><b>Address:</b> Poblacion, Malitbog Bukidnon</p>
-            <p><b>Email:</b> irishmayobsioma2222@gmail.com</p>
-            <p><b>Contact No.:</b> 09753947406</p>
-          </div>
-
-          <!-- ABOUT ME BUTTON -->
-          <div class="button" onclick="showAboutPage()">
-            About Me!
-          </div>
-
-        </div>
-
-        <div class="right">
-          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop" alt="Profile Picture">
-        </div>
-
+      <div class="main-title">
+        Welcome<br>
+        Beautifully
       </div>
 
-      <div class="footer">
-        Comfortable with Solitude.
+      <div class="description">
+        Creating elegant digital experiences with modern
+        web design, creativity, and passion.
+      </div>
+
+      <button class="btn" onclick="showAboutPage()">
+        ABOUT ME
+      </button>
+
+      <!-- SOCIAL MEDIA LINKS -->
+
+      <div class="socials">
+
+        <!-- FACEBOOK -->
+        <a href="https://www.facebook.com/irishmay.obsioma"
+        target="_blank">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <!-- INSTAGRAM -->
+        <a href="https://www.instagram.com/irishmyobsm?igsh=MTE0Ym9qc3UxcTBjYw=="
+        target="_blank">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
       </div>
 
     </div>
@@ -220,35 +253,24 @@
 
   <div class="about-page" id="aboutPage">
 
-    <div class="about-container">
+    <div class="about-content">
 
-      <div class="image-section">
-        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1000&auto=format&fit=crop" alt="About Me">
+      <div class="about-title">
+        About Me
       </div>
 
-      <div class="text-section">
-
-        <h1>
-          About Me
-        </h1>
-
-        <p>
-          Hello! I'm Iris May, an Information Technology student
-          passionate about web development, UI design, and creative
-          digital projects.
-        </p>
-
-        <p>
-          I enjoy learning new technologies, creating beautiful
-          websites, and improving my programming skills every day.
-        </p>
-
-        <!-- BACK BUTTON -->
-        <button class="back-btn" onclick="showHomePage()">
-          Back Home
-        </button>
-
+      <div class="about-text">
+        Hello, I’m Iris May — an Information Technology
+        student passionate about elegant web design,
+        modern user experiences, and creative development.
+        I enjoy building beautiful and functional websites
+        while continuously improving my skills in technology
+        and design.
       </div>
+
+      <button class="back-btn" onclick="showHomePage()">
+        BACK HOME
+      </button>
 
     </div>
 
@@ -271,3 +293,4 @@
 </body>
 
 </html>
+```
