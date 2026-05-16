@@ -1,27 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Profile</title>
+  <title>Personal Portfolio</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family: Times New Roman;
     }
 
     body{
+      font-family: Arial, sans-serif;
       background:#3b2314;
       color:#f5efe3;
+    }
+
+    /* HOME PAGE */
+
+    .home-page{
+      min-height:100vh;
       padding:40px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
 
     .container{
       max-width:1200px;
-      margin:auto;
+      width:100%;
     }
 
     .title{
@@ -49,29 +60,29 @@
       background:#efe6d8;
       border:2px solid #6d5648;
       border-radius:20px;
-      padding:15px;
+      padding:20px;
       margin-bottom:20px;
     }
 
     .profile h2{
-      font-size:28px;
-      margin-bottom:10px;
+      font-size:35px;
+      margin-bottom:15px;
     }
 
     .profile p{
-      font-size:18px;
-      margin:6px 0;
+      font-size:20px;
+      margin:10px 0;
     }
 
     .button{
       background:#3b2314;
       color:white;
-      padding:15px;
+      padding:18px;
       text-align:center;
       border-radius:15px;
-      font-size:20px;
-      margin-top:15px;
+      font-size:22px;
       cursor:pointer;
+      transition:0.3s;
     }
 
     .button:hover{
@@ -84,8 +95,9 @@
 
     .right img{
       width:100%;
-      border-radius:25px;
+      height:500px;
       object-fit:cover;
+      border-radius:25px;
     }
 
     .footer{
@@ -99,48 +111,168 @@
       font-weight:bold;
     }
 
+    /* ABOUT PAGE */
+
+    .about-page{
+      display:none;
+      min-height:100vh;
+      background:#d8cfbe;
+      color:#3a342d;
+      padding:40px;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .about-container{
+      display:flex;
+      gap:80px;
+      align-items:center;
+      max-width:1100px;
+      width:100%;
+    }
+
+    .image-section img{
+      width:350px;
+      height:520px;
+      object-fit:cover;
+    }
+
+    .text-section{
+      max-width:450px;
+      font-family: Georgia, serif;
+    }
+
+    .text-section h1{
+      font-size:60px;
+      margin-bottom:35px;
+      font-weight:normal;
+    }
+
+    .text-section p{
+      font-size:24px;
+      line-height:1.8;
+      margin-bottom:25px;
+    }
+
+    .back-btn{
+      display:inline-block;
+      margin-top:20px;
+      padding:15px 35px;
+      background:#3a342d;
+      color:white;
+      border:none;
+      border-radius:10px;
+      font-size:20px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .back-btn:hover{
+      background:#5a5248;
+    }
+
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+  <!-- HOME PAGE -->
 
-    <div class="title">
-      IRISH MAY ANDO OBSIOMA
-    </div>
+  <div class="home-page" id="homePage">
 
-    <div class="card">
+    <div class="container">
 
-      <div class="left">
+      <div class="title">
+        PERSONAL INFO
+      </div>
 
-        <div class="profile">
-          <h2>Iris May</h2>
+      <div class="card">
 
-          <p><b>Age:</b> 21</p>
-          <p><b>Course:</b> Bachelor of Science in Information Technology</p>
-          <p><b>Address:</b> Zone 2, Poblacion, Malitbog Bukidnon</p>
-          <p><b>Email:</b> irishmayobsioma2222@gmail.com</p>
-          <p><b>Contact No.:</b> 09753947406</p>
+        <div class="left">
+
+          <div class="profile">
+            <h2>Iris May</h2>
+
+            <p><b>Age:</b> 21</p>
+            <p><b>Course:</b> BS Information Technology</p>
+            <p><b>Address:</b> Philippines</p>
+            <p><b>Email:</b> iris@example.com</p>
+            <p><b>Hobbies:</b> Designing & Coding</p>
+          </div>
+
+          <!-- ABOUT ME BUTTON -->
+          <div class="button" onclick="showAboutPage()">
+            About Me
+          </div>
+
         </div>
 
-        <div class="button">
-          About Me!
+        <div class="right">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop" alt="Profile Picture">
         </div>
 
       </div>
 
-      <div class="right">
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1000&auto=format&fit=crop" alt="Profile Picture">
+      <div class="footer">
+        Subscribe & Follow
       </div>
 
-    </div>
-
-    <div class="footer">
-      Comfortable with solitude.
     </div>
 
   </div>
 
+  <!-- ABOUT PAGE -->
+
+  <div class="about-page" id="aboutPage">
+
+    <div class="about-container">
+
+      <div class="image-section">
+        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1000&auto=format&fit=crop" alt="About Me">
+      </div>
+
+      <div class="text-section">
+
+        <h1>
+          About Me
+        </h1>
+
+        <p>
+          Hello! I'm Iris May, an Information Technology student
+          passionate about web development, UI design, and creative
+          digital projects.
+        </p>
+
+        <p>
+          I enjoy learning new technologies, creating beautiful
+          websites, and improving my programming skills every day.
+        </p>
+
+        <!-- BACK BUTTON -->
+        <button class="back-btn" onclick="showHomePage()">
+          Back Home
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    function showAboutPage(){
+      document.getElementById("homePage").style.display = "none";
+      document.getElementById("aboutPage").style.display = "flex";
+    }
+
+    function showHomePage(){
+      document.getElementById("aboutPage").style.display = "none";
+      document.getElementById("homePage").style.display = "flex";
+    }
+
+  </script>
+
 </body>
+
 </html>
