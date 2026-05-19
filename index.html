@@ -1,15 +1,14 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>UGC Portfolio</title>
+  <title>Interactive UGC Portfolio</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -18,14 +17,51 @@
     }
 
     body{
-      background:#c58ac8;
+      background:#c78ac9;
       color:white;
-      padding:40px;
+      overflow-x:hidden;
     }
 
+    /* NAVIGATION */
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      background:#8d3f91;
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:1000;
+      box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    nav h1{
+      font-size:24px;
+    }
+
+    nav ul{
+      display:flex;
+      gap:20px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      text-decoration:none;
+      color:white;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      color:#ffd6ff;
+    }
+
+    /* MAIN */
     .container{
       max-width:1200px;
       margin:auto;
+      padding:120px 30px 50px;
     }
 
     .title{
@@ -33,34 +69,36 @@
       margin-bottom:40px;
     }
 
-    .title h1{
+    .title h2{
       font-size:55px;
-      font-weight:700;
-      color:white;
       text-shadow:2px 2px 8px rgba(0,0,0,0.2);
     }
 
+    /* GRID */
     .grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(400px, 1fr));
+      grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
       gap:25px;
     }
 
+    /* CLICKABLE CARDS */
     .card{
-      background:#8c3b8f;
-      border-radius:12px;
+      background:#8d3f91;
+      border-radius:15px;
       overflow:hidden;
-      box-shadow:0 6px 15px rgba(0,0,0,0.2);
-      transition:0.3s;
+      cursor:pointer;
+      transition:0.4s;
+      box-shadow:0 5px 15px rgba(0,0,0,0.2);
+      position:relative;
     }
 
     .card:hover{
-      transform:translateY(-5px);
+      transform:translateY(-8px) scale(1.02);
     }
 
     .card img{
       width:100%;
-      height:280px;
+      height:250px;
       object-fit:cover;
     }
 
@@ -68,185 +106,315 @@
       padding:25px;
     }
 
-    .card h2{
-      font-size:30px;
+    .card h3{
+      font-size:28px;
       margin-bottom:15px;
-      font-weight:600;
     }
 
     .card p{
-      line-height:1.8;
-      font-size:15px;
-      color:#f4e6f4;
+      line-height:1.7;
+      color:#f3e7f4;
     }
 
-    .services ul{
-      list-style:none;
-      margin-top:15px;
+    /* HIDDEN CONTENT */
+    .popup{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background:rgba(0,0,0,0.7);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      z-index:9999;
+      padding:20px;
     }
 
-    .services li{
-      padding:10px 0;
-      border-bottom:1px solid rgba(255,255,255,0.2);
+    .popup-content{
+      background:white;
+      color:#333;
+      width:90%;
+      max-width:800px;
+      border-radius:20px;
+      padding:40px;
+      position:relative;
+      animation:popup 0.3s ease;
+      max-height:90vh;
+      overflow-y:auto;
     }
 
+    @keyframes popup{
+      from{
+        transform:scale(0.7);
+        opacity:0;
+      }
+      to{
+        transform:scale(1);
+        opacity:1;
+      }
+    }
+
+    .close{
+      position:absolute;
+      top:15px;
+      right:20px;
+      font-size:30px;
+      cursor:pointer;
+      color:#8d3f91;
+    }
+
+    /* GALLERY */
     .gallery{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:10px;
-      margin-top:15px;
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:15px;
+      margin-top:20px;
     }
 
     .gallery img{
       width:100%;
-      height:120px;
+      border-radius:10px;
+      height:180px;
       object-fit:cover;
-      border-radius:8px;
     }
 
-    .contact{
-      text-align:center;
-    }
-
-    .contact a{
+    /* CONTACT BUTTONS */
+    .contact-links a{
       display:block;
-      margin:10px 0;
       text-decoration:none;
+      background:#8d3f91;
       color:white;
-      background:#d58fd8;
-      padding:12px;
-      border-radius:30px;
+      padding:14px;
+      margin-top:15px;
+      border-radius:40px;
+      text-align:center;
       transition:0.3s;
     }
 
-    .contact a:hover{
-      background:#f1b7f3;
-      color:#5a165d;
+    .contact-links a:hover{
+      background:#c78ac9;
     }
 
     @media(max-width:768px){
-      .title h1{
+
+      .title h2{
         font-size:38px;
       }
 
-      .grid{
-        grid-template-columns:1fr;
+      nav{
+        flex-direction:column;
+        gap:10px;
       }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
     }
+
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+  <!-- NAVIGATION -->
+  <nav>
+    <h1>Iris Portfolio</h1>
 
-    <!-- TITLE -->
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN -->
+  <div class="container" id="home">
+
     <div class="title">
-      <h1>UGC Portfolio</h1>
+      <h2>UGC Portfolio</h2>
     </div>
 
-    <div class="grid">
+    <div class="grid" id="portfolio">
 
       <!-- ABOUT -->
-      <div class="card">
-        <img src="your-image.jpg" alt="Profile">
+      <div class="card" onclick="openPopup('aboutPopup')">
+        <img src="your-image.jpg">
         <div class="card-content">
-          <h2>About Me</h2>
-          <p>
-            Hi! I'm Iris, a UGC Creator passionate about creating authentic
-            and engaging content for brands. I specialize in lifestyle,
-            beauty, and aesthetic video content that connects with audiences.
-          </p>
-        </div>
-      </div>
-
-      <!-- WHAT IS UGC -->
-      <div class="card">
-        <div class="card-content">
-          <h2>What is UGC?</h2>
-          <p>
-            User Generated Content (UGC) is original brand-specific content
-            created by creators designed to feel natural, authentic, and relatable.
-            It helps brands build trust and stronger connections with their audience.
-          </p>
+          <h3>About Me</h3>
+          <p>Click to view full information.</p>
         </div>
       </div>
 
       <!-- VIDEOS -->
-      <div class="card">
+      <div class="card" onclick="openPopup('videoPopup')">
+        <img src="video-cover.jpg">
         <div class="card-content">
-          <h2>UGC Videos</h2>
-
-          <div class="gallery">
-            <img src="video1.jpg">
-            <img src="video2.jpg">
-            <img src="video3.jpg">
-            <img src="video4.jpg">
-            <img src="video5.jpg">
-            <img src="video6.jpg">
-          </div>
+          <h3>UGC Videos</h3>
+          <p>Click to watch my content samples.</p>
         </div>
       </div>
 
       <!-- PHOTOS -->
-      <div class="card">
+      <div class="card" onclick="openPopup('photoPopup')">
+        <img src="photo-cover.jpg">
         <div class="card-content">
-          <h2>UGC Photos</h2>
-
-          <div class="gallery">
-            <img src="photo1.jpg">
-            <img src="photo2.jpg">
-            <img src="photo3.jpg">
-            <img src="photo4.jpg">
-            <img src="photo5.jpg">
-            <img src="photo6.jpg">
-          </div>
+          <h3>UGC Photos</h3>
+          <p>Click to see my gallery.</p>
         </div>
       </div>
 
       <!-- SERVICES -->
-      <div class="card services">
+      <div class="card" onclick="openPopup('servicePopup')">
+        <img src="service.jpg">
         <div class="card-content">
-          <h2>My Services</h2>
-
-          <ul>
-            <li>✔ Social Media Management</li>
-            <li>✔ UGC Video Creation</li>
-            <li>✔ Product Photography</li>
-            <li>✔ Video Editing</li>
-            <li>✔ Branding Content</li>
-            <li>✔ TikTok & Reels Content</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- WHY ME -->
-      <div class="card">
-        <img src="your-photo2.jpg" alt="">
-        <div class="card-content">
-          <h2>Why Choose Me?</h2>
-          <p>
-            I create visually appealing and engaging content that helps
-            brands increase visibility and connect emotionally with customers.
-            My content style is modern, aesthetic, and authentic.
-          </p>
+          <h3>My Services</h3>
+          <p>Click to see offered services.</p>
         </div>
       </div>
 
       <!-- CONTACT -->
-      <div class="card">
-        <div class="card-content contact">
-          <h2>Contact Me</h2>
-
-          <a href="#">hello@gmail.com</a>
-          <a href="#">@yourinstagram</a>
-          <a href="#">www.yourwebsite.com</a>
+      <div class="card" onclick="openPopup('contactPopup')" id="contact">
+        <img src="contact.jpg">
+        <div class="card-content">
+          <h3>Contact Me</h3>
+          <p>Click to contact me.</p>
         </div>
       </div>
 
     </div>
   </div>
 
+  <!-- POPUPS -->
+
+  <!-- ABOUT -->
+  <div class="popup" id="aboutPopup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('aboutPopup')">&times;</span>
+
+      <h2>About Me</h2>
+
+      <p>
+        Hi! I'm Iris, a passionate UGC Creator specializing in aesthetic,
+        lifestyle, beauty, and engaging social media content.
+      </p>
+
+      <br>
+
+      <p>
+        I create authentic content that helps brands connect emotionally
+        with their audience through modern visuals and storytelling.
+      </p>
+
+    </div>
+  </div>
+
+  <!-- VIDEOS -->
+  <div class="popup" id="videoPopup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('videoPopup')">&times;</span>
+
+      <h2>UGC Videos</h2>
+
+      <div class="gallery">
+        <video controls width="100%">
+          <source src="video1.mp4" type="video/mp4">
+        </video>
+
+        <video controls width="100%">
+          <source src="video2.mp4" type="video/mp4">
+        </video>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- PHOTOS -->
+  <div class="popup" id="photoPopup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('photoPopup')">&times;</span>
+
+      <h2>UGC Photos</h2>
+
+      <div class="gallery">
+        <img src="photo1.jpg">
+        <img src="photo2.jpg">
+        <img src="photo3.jpg">
+        <img src="photo4.jpg">
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="popup" id="servicePopup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('servicePopup')">&times;</span>
+
+      <h2>My Services</h2>
+
+      <ul>
+        <li>✔ UGC Video Creation</li>
+        <li>✔ Product Photography</li>
+        <li>✔ Video Editing</li>
+        <li>✔ Social Media Content</li>
+        <li>✔ TikTok & Reels Editing</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="popup" id="contactPopup">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('contactPopup')">&times;</span>
+
+      <h2>Contact Me</h2>
+
+      <div class="contact-links">
+        <a href="mailto:yourgmail@gmail.com">yourgmail@gmail.com</a>
+
+        <a href="https://instagram.com/yourusername" target="_blank">
+          Instagram
+        </a>
+
+        <a href="https://tiktok.com/@yourusername" target="_blank">
+          TikTok
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    function openPopup(id){
+      document.getElementById(id).style.display = "flex";
+    }
+
+    function closePopup(id){
+      document.getElementById(id).style.display = "none";
+    }
+
+    // CLOSE WHEN CLICK OUTSIDE
+    window.onclick = function(event){
+
+      const popups = document.querySelectorAll('.popup');
+
+      popups.forEach(function(popup){
+
+        if(event.target == popup){
+          popup.style.display = "none";
+        }
+
+      });
+
+    }
+
+  </script>
+
 </body>
 </html>
-```
