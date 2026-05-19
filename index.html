@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Interactive UGC Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Iris Portfolio</title>
+
+  <!-- GOOGLE FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
 
@@ -81,7 +87,7 @@
       gap:25px;
     }
 
-    /* CLICKABLE CARDS */
+    /* CARDS */
     .card{
       background:#8d3f91;
       border-radius:15px;
@@ -89,7 +95,6 @@
       cursor:pointer;
       transition:0.4s;
       box-shadow:0 5px 15px rgba(0,0,0,0.2);
-      position:relative;
     }
 
     .card:hover{
@@ -116,7 +121,7 @@
       color:#f3e7f4;
     }
 
-    /* HIDDEN CONTENT */
+    /* POPUP */
     .popup{
       position:fixed;
       top:0;
@@ -179,21 +184,24 @@
       object-fit:cover;
     }
 
-    /* CONTACT BUTTONS */
+    /* SOCIAL MEDIA LOGOS */
+    .contact-links{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      gap:40px;
+      margin-top:30px;
+    }
+
     .contact-links a{
-      display:block;
-      text-decoration:none;
-      background:#8d3f91;
-      color:white;
-      padding:14px;
-      margin-top:15px;
-      border-radius:40px;
-      text-align:center;
-      transition:0.3s;
+      color:#8b5e4a;
+      font-size:55px;
+      transition:0.3s ease;
     }
 
     .contact-links a:hover{
-      background:#c78ac9;
+      transform:scale(1.15);
+      color:#a06b54;
     }
 
     @media(max-width:768px){
@@ -221,13 +229,28 @@
 
   <!-- NAVIGATION -->
   <nav>
+
     <h1>Iris Portfolio</h1>
 
     <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
+
+      <li>
+        <a href="#home">Home</a>
+      </li>
+
+      <!-- PORTFOLIO BUTTON -->
+      <li>
+        <a href="javascript:void(0)" onclick="openPopup('photoPopup')">
+          Portfolio
+        </a>
+      </li>
+
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+
     </ul>
+
   </nav>
 
   <!-- MAIN -->
@@ -237,106 +260,84 @@
       <h2>UGC Portfolio</h2>
     </div>
 
-   <li><a href="#photos">Photos</a></li>
-
-    <!-- PHOTOS SECTION -->
-<div class="container" id="photos">
-
-  <div class="title">
-    <h2>My Photos</h2>
-  </div>
-
-  <div class="grid">
-
-    <!-- PHOTO 1 -->
-    <div class="card">
-      <img src="photo1.jpg" alt="Photo 1">
-    </div>
-
-    <!-- PHOTO 2 -->
-    <div class="card">
-      <img src="photo2.jpg" alt="Photo 2">
-    </div>
-
-    <!-- PHOTO 3 -->
-    <div class="card">
-      <img src="photo3.jpg" alt="Photo 3">
-    </div>
-
-    <!-- PHOTO 4 -->
-    <div class="card">
-      <img src="photo4.jpg" alt="Photo 4">
-    </div>
-
-    <!-- PHOTO 5 -->
-    <div class="card">
-      <img src="photo5.jpg" alt="Photo 5">
-    </div>
-
-    <!-- PHOTO 6 -->
-    <div class="card">
-      <img src="photo6.jpg" alt="Photo 6">
-    </div>
-
-  </div>
-</div>
+    <div class="grid" id="portfolio">
 
       <!-- ABOUT -->
       <div class="card" onclick="openPopup('aboutPopup')">
+
         <img src="your-image.jpg">
+
         <div class="card-content">
           <h3>About Me</h3>
           <p>Click to view full information.</p>
         </div>
+
       </div>
 
       <!-- VIDEOS -->
       <div class="card" onclick="openPopup('videoPopup')">
+
         <img src="video-cover.jpg">
+
         <div class="card-content">
           <h3>UGC Videos</h3>
           <p>Click to watch my content samples.</p>
         </div>
+
       </div>
 
       <!-- PHOTOS -->
       <div class="card" onclick="openPopup('photoPopup')">
+
         <img src="photo-cover.jpg">
+
         <div class="card-content">
           <h3>UGC Photos</h3>
           <p>Click to see my gallery.</p>
         </div>
+
       </div>
 
       <!-- SERVICES -->
       <div class="card" onclick="openPopup('servicePopup')">
+
         <img src="service.jpg">
+
         <div class="card-content">
           <h3>My Services</h3>
           <p>Click to see offered services.</p>
         </div>
+
       </div>
 
       <!-- CONTACT -->
       <div class="card" onclick="openPopup('contactPopup')" id="contact">
+
         <img src="contact.jpg">
+
         <div class="card-content">
           <h3>Contact Me</h3>
           <p>Click to contact me.</p>
         </div>
+
       </div>
 
     </div>
+
   </div>
 
-  <!-- POPUPS -->
-
-  <!-- ABOUT -->
+  <!-- ABOUT POPUP -->
   <div class="popup" id="aboutPopup">
+
     <div class="popup-content">
-      <span class="close" onclick="closePopup('aboutPopup')">&times;</span>
+
+      <span class="close" onclick="closePopup('aboutPopup')">
+        &times;
+      </span>
 
       <h2>About Me</h2>
+
+      <br>
 
       <p>
         Hi! I'm Iris, a passionate UGC Creator specializing in aesthetic,
@@ -351,16 +352,22 @@
       </p>
 
     </div>
+
   </div>
 
-  <!-- VIDEOS -->
+  <!-- VIDEO POPUP -->
   <div class="popup" id="videoPopup">
+
     <div class="popup-content">
-      <span class="close" onclick="closePopup('videoPopup')">&times;</span>
+
+      <span class="close" onclick="closePopup('videoPopup')">
+        &times;
+      </span>
 
       <h2>UGC Videos</h2>
 
       <div class="gallery">
+
         <video controls width="100%">
           <source src="video1.mp4" type="video/mp4">
         </video>
@@ -368,32 +375,47 @@
         <video controls width="100%">
           <source src="video2.mp4" type="video/mp4">
         </video>
+
       </div>
 
     </div>
+
   </div>
 
-  <!-- PHOTOS -->
+  <!-- PHOTO POPUP -->
   <div class="popup" id="photoPopup">
+
     <div class="popup-content">
-      <span class="close" onclick="closePopup('photoPopup')">&times;</span>
+
+      <span class="close" onclick="closePopup('photoPopup')">
+        &times;
+      </span>
 
       <h2>UGC Photos</h2>
 
       <div class="gallery">
+
         <img src="photo1.jpg">
         <img src="photo2.jpg">
         <img src="photo3.jpg">
         <img src="photo4.jpg">
+        <img src="photo5.jpg">
+        <img src="photo6.jpg">
+
       </div>
 
     </div>
+
   </div>
 
-  <!-- SERVICES -->
+  <!-- SERVICES POPUP -->
   <div class="popup" id="servicePopup">
+
     <div class="popup-content">
-      <span class="close" onclick="closePopup('servicePopup')">&times;</span>
+
+      <span class="close" onclick="closePopup('servicePopup')">
+        &times;
+      </span>
 
       <h2>My Services</h2>
 
@@ -406,28 +428,43 @@
       </ul>
 
     </div>
+
   </div>
 
-  <!-- CONTACT -->
-  <div class="popup" id="contactPopup">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup('contactPopup')">&times;</span>
+  <!-- CONTACT POPUP -->
+<div class="popup" id="contactPopup">
 
-      <h2>Contact Me</h2>
+  <div class="popup-content">
 
-      <div class="contact-links">
-        <a href="mailto:yourgmail@gmail.com">yourgmail@gmail.com</a>
+    <span class="close" onclick="closePopup('contactPopup')">
+      &times;
+    </span>
 
-        <a href="https://instagram.com/yourusername" target="_blank">
-          Instagram
-        </a>
+    <h2>Contact Me</h2>
 
-        <a href="https://tiktok.com/@yourusername" target="_blank">
-          TikTok
-        </a>
-      </div>
+    <!-- SOCIAL MEDIA LOGOS -->
+    <div class="contact-links">
+
+      <!-- FACEBOOK -->
+      <a href="https://www.facebook.com/irishmay.obsioma"
+         target="_blank"
+         onclick="event.stopPropagation();">
+
+        <i class="fab fa-facebook"></i>
+
+      </a>
+
+      <!-- INSTAGRAM -->
+      <a href="https://www.instagram.com/irishmyobsm?igsh=MTE0Ym9qc3UxcTBjYw=="
+         target="_blank"
+         onclick="event.stopPropagation();">
+
+        <i class="fab fa-instagram"></i>
+
+      </a>
 
     </div>
+
   </div>
 
   <!-- JAVASCRIPT -->
