@@ -1,17 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive UGC Portfolio</title>
 
-  <title>Iris Portfolio</title>
-
-  <!-- GOOGLE FONT -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- FONT AWESOME -->
-  <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
   <style>
 
@@ -87,7 +81,7 @@
       gap:25px;
     }
 
-    /* CARDS */
+    /* CLICKABLE CARDS */
     .card{
       background:#8d3f91;
       border-radius:15px;
@@ -95,6 +89,7 @@
       cursor:pointer;
       transition:0.4s;
       box-shadow:0 5px 15px rgba(0,0,0,0.2);
+      position:relative;
     }
 
     .card:hover{
@@ -121,7 +116,7 @@
       color:#f3e7f4;
     }
 
-    /* POPUP */
+    /* HIDDEN CONTENT */
     .popup{
       position:fixed;
       top:0;
@@ -189,19 +184,22 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      gap:40px;
-      margin-top:30px;
+      gap:25px;
+      margin-top:25px;
     }
 
     .contact-links a{
-      color:#8b5e4a;
-      font-size:55px;
-      transition:0.3s ease;
+      text-decoration:none;
     }
 
-    .contact-links a:hover{
+    .contact-links img{
+      width:55px;
+      transition:0.3s;
+      cursor:pointer;
+    }
+
+    .contact-links img:hover{
       transform:scale(1.15);
-      color:#a06b54;
     }
 
     @media(max-width:768px){
@@ -229,14 +227,10 @@
 
   <!-- NAVIGATION -->
   <nav>
-
     <h1>Iris Portfolio</h1>
 
     <ul>
-
-      <li>
-        <a href="#home">Home</a>
-      </li>
+      <li><a href="#home">Home</a></li>
 
       <!-- PORTFOLIO BUTTON -->
       <li>
@@ -245,12 +239,8 @@
         </a>
       </li>
 
-      <li>
-        <a href="#contact">Contact</a>
-      </li>
-
+      <li><a href="#contact">Contact</a></li>
     </ul>
-
   </nav>
 
   <!-- MAIN -->
@@ -262,70 +252,57 @@
 
     <div class="grid" id="portfolio">
 
- <!-- ABOUT -->
-<div class="card" onclick="openPopup('aboutPopup')">
+      <!-- ABOUT -->
+      <div class="card" onclick="openPopup('aboutPopup')">
+        <img src="your-image.jpg">
 
-  <img src="Irish2.jpg" alt="Iris Photo">
-
-  <div class="card-content">
-    <h3>About Me</h3>
-    <p>Click to view full information.</p>
-  </div>
-
-</div>
-
+        <div class="card-content">
+          <h3>About Me</h3>
+          <p>Click to view full information.</p>
+        </div>
       </div>
 
       <!-- VIDEOS -->
       <div class="card" onclick="openPopup('videoPopup')">
-
         <img src="video-cover.jpg">
 
         <div class="card-content">
           <h3>UGC Videos</h3>
           <p>Click to watch my content samples.</p>
         </div>
-
       </div>
 
       <!-- PHOTOS -->
       <div class="card" onclick="openPopup('photoPopup')">
-
         <img src="photo-cover.jpg">
 
         <div class="card-content">
           <h3>UGC Photos</h3>
           <p>Click to see my gallery.</p>
         </div>
-
       </div>
 
       <!-- SERVICES -->
       <div class="card" onclick="openPopup('servicePopup')">
-
         <img src="service.jpg">
 
         <div class="card-content">
           <h3>My Services</h3>
           <p>Click to see offered services.</p>
         </div>
-
       </div>
 
       <!-- CONTACT -->
       <div class="card" onclick="openPopup('contactPopup')" id="contact">
-
         <img src="contact.jpg">
 
         <div class="card-content">
           <h3>Contact Me</h3>
           <p>Click to contact me.</p>
         </div>
-
       </div>
 
     </div>
-
   </div>
 
   <!-- ABOUT POPUP -->
@@ -341,14 +318,10 @@
 
       <br>
 
-      <br>
-
       <p>
         Hi! I'm Iris, a passionate UGC Creator specializing in aesthetic,
         lifestyle, beauty, and engaging social media content.
       </p>
-
-      <br>
 
       <br>
 
@@ -468,6 +441,16 @@
         <i class="fab fa-instagram"></i>
 
       </a>
+
+    </div>
+
+  </div>
+
+</div>
+
+        </a>
+
+      </div>
 
     </div>
 
